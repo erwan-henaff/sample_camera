@@ -63,18 +63,36 @@
 // console.log(anylyzeArr([1,2,3,4,5,6,7,9,10]))
 
 
-function anylyzeArr2 (arrarg) {
-    
-    for (let i = 1; i <= 10; i++) {
-        let boll = 1
-        for (let j = 0; j< arrarg.length; j++) {
-          if (i !== arrarg[j]) boll *= 1
-          else if (i === arrarg[j]) boll *= 0
+// function anylyzeArr2 (arrarg) {   
+//     for (let i = 1; i <= 10; i++) {
+//         let boll = 1
+//         for (let j = 0; j< arrarg.length; j++) {
+//           if (i !== arrarg[j]) boll *= 1
+//           else if (i === arrarg[j]) boll *= 0
+//         }
+//         if (boll === 0) continue
+//         else return i
+//     }
+// }
+
+// console.log(anylyzeArr2([1,2,3,4,6,7,8,9,10]))
+// console.log(anylyzeArr2([1,3,4,5,10,6,7,7,3,3,3,7,2,1,1,8,10,8,3,4]))
+// console.log(anylyzeArr2([5,6,7,8,8,1,1,2,4,6,7,8,9,10]))
+
+function removeDouble(arrNumb)  {
+    let arrClone = arrNumb
+    for (let i = 0; i < arrNumb.length-1; i++) {
+        for (let j = i+1; j < arrNumb.length; j++) {
+            if (arrNumb[j] === arrNumb [i]) {
+                arrClone.splice(j,1)
+                j--;
+            } 
         }
-        if (boll === 0) continue
-        else return i
     }
+    return arrClone
 }
 
-console.log(anylyzeArr2([1,2,3,4,6,7,8,9,10]))
-console.log(anylyzeArr2([1,3,4,5,10,6,7,7,3,3,3,7,2,1,1,8,10,8,3,4]))
+
+console.log(removeDouble([1,1,2,6,4,3,7,5,5,5,1,1,1,1,9,10,45,4,34,4,22,34]))
+
+console.log(removeDouble([2,3,3,3]))
