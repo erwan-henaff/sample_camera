@@ -1,0 +1,9 @@
+video,canvas {
+    border : 3px solid green;
+    height : 150px;
+    width: 200px;
+}
+
+video {
+    /* display: none; */
+}
