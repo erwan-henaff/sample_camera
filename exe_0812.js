@@ -156,14 +156,70 @@ function checkOandX (teststr) {
 // console.log(checkOandX("Xv_ofvg"))
 // console.log(checkOandX("XojOoc333xox"))
 
-function checkOandX2 (teststr) {
-    teststr = teststr.toLowerCase()
-    console.log(teststr.split("x"))
-    return (teststr.split("x").length == teststr.split("o").length)
-}
+// function checkOandX2 (teststr) {
+//     teststr = teststr.toLowerCase()
+//     console.log(teststr.split("x"))
+//     console.log(teststr.split("o"))
+//     return (teststr.split("x").length == teststr.split("o").length)
+// }
 
-console.log(checkOandX2("oo77xxxXXooo"))
-console.log(checkOandX2("xxXXhjOOjoo"))
+// console.log(checkOandX2("oo77xxxXXooo"))
+// console.log(checkOandX2("xoox"))
 // console.log(checkOandX2("Xoocxo3x"))
 // console.log(checkOandX2("Xv_ofvg"))
 // console.log(checkOandX2("XojOoc333xox"))
+
+// function repartitionRandom () {
+//     let a1 = 0;
+//     let a2 = 0;
+//     let a3 = 0;
+//     let a4 = 0;
+//     let a5 = 0;
+//     let a6 = 0;
+//     let a7 = 0;
+//     let a8 = 0;
+//     let a9 = 0;
+//     let a10 = 0;
+
+//     console.log(`${a1},${a2},${a3},${a4},${a5},${a6},${a7},${a8},${a9},${a10}`)
+//     for (let i = 0; i < 1000000000; i++) {
+//         let res = Math.random()
+//         if (res<0.1) {a1 += 1}
+//         else if (res<0.2) {a2 +=1}
+//         else if (res<0.3) {a3 +=1}
+//         else if (res<0.4) {a4 +=1}
+//         else if (res<0.5) {a5 +=1}
+//         else if (res<0.6) {a6 +=1}
+//         else if (res<0.7) {a7 +=1}
+//         else if (res<0.8) {a8 +=1}
+//         else if (res<0.9) {a9 +=1}
+//         else {a10 +=1}
+//     }
+//     console.log(`${a1},${a2},${a3},${a4},${a5},${a6},${a7},${a8},${a9},${a10}`)
+// }
+// repartitionRandom()
+
+function findstr_in_str (str1,str2) {
+    let arr = [];
+    let clone = str2
+    for (let i = 0; i < str2.length; i++) {
+        let arrtest = str2[i].split(str1);
+        // console.log(arrtest)
+        // console.log(arrtest[1])
+        // console.log(clone[i])
+        // arr.push("free")
+        // console.log(`${arrtest} iiiiiiiiiiiiiiiii`)
+
+        if (arrtest[0]=='') {arr.push(clone[i])}
+        
+        // return arr
+    }
+    return arr
+
+}
+
+console.log(findstr_in_str("bu",["button", "breakfast", "border"]))
+console.log(findstr_in_str("tri", ["triplet", "tries", "trip", "piano", "tree"]))
+
+
+
