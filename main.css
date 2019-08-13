@@ -1,9 +1,16 @@
+html, body, p {
+    border: 0;
+    margin: 0;
+}
+
 video,canvas {
+    box-sizing: border-box;
     border : 3px solid green;
-    height : 150px;
-    width: 200px;
+    /* width: 320px;
+    height : 240px; */
+    
 }
 
 video {
-    /* display: none; */
+    display: none;
 }

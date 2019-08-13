@@ -1,8 +1,8 @@
 var canvas = document.getElementById('lookatme');
 var ctx = canvas.getContext('2d');
 
-canvas.width = 400;
-canvas.height = 150;
+canvas.width = innerWidth;
+canvas.height = innerHeight;
 
 ctx.fillStyle = "red";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -21,18 +21,16 @@ if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             videoarr[i].srcObject = stream;
             videoarr[i].play();            
         }
-
         // video.srcObject = stream;
         // video.play();
-
     });
 }
 
 video.addEventListener('play', function () {
-    var $this = this; //cache
+    var videovalue = this; //cache
     (function loop() {
-        if (!$this.paused && !$this.ended) {
-            ctx.drawImage($this, 0, 0);
+        if (!videovalue.paused && !videovalue.ended) {
+            ctx.drawImage(videovalue, 0, 0, 320, 240);
             setTimeout(loop, 1000 / 30); // drawing at 30fps
         }
     })();
