@@ -136,19 +136,19 @@ function finduniq2 (listes) {
 // console.log(toCamelCase("hello_world"))
 //console.log(toCamelCase("javascript_is_fun"))
 
-function numberofchar (teststr,testchar) {
-    let resu = 0
-    teststr = teststr.toLowerCase()
-    for (let i = 0; i < teststr.length; i++) {
-        if (teststr[i] == testchar) resu += 1
-    }
-    return resu
-}
+// function numberofchar (teststr,testchar) {
+//     let resu = 0
+//     teststr = teststr.toLowerCase()
+//     for (let i = 0; i < teststr.length; i++) {
+//         if (teststr[i] == testchar) resu += 1
+//     }
+//     return resu
+// }
 
-function checkOandX (teststr) {
-        if(numberofchar(teststr,"o") === numberofchar(teststr,"x")) return true
-        else return false   
-}
+// function checkOandX (teststr) {
+//         if(numberofchar(teststr,"o") === numberofchar(teststr,"x")) return true
+//         else return false   
+// }
 
 // console.log(checkOandX("XXooo"))
 // console.log(checkOandX("XXhjjoo"))
@@ -199,27 +199,57 @@ function checkOandX (teststr) {
 // }
 // repartitionRandom()
 
-function findstr_in_str (str1,str2) {
-    let arr = [];
-    let clone = str2
-    for (let i = 0; i < str2.length; i++) {
-        let arrtest = str2[i].split(str1);
-        // console.log(arrtest)
-        // console.log(arrtest[1])
-        // console.log(clone[i])
-        // arr.push("free")
-        // console.log(`${arrtest} iiiiiiiiiiiiiiiii`)
+// function findstr_in_str (str1,str2) {
+//     let arr = [];
+//     // let clone = str2
+//     for (let i = 0; i < str2.length; i++) {
+//         // let arrtest = str2[i].split(str1);
+//         if (str2[i].split(str1)[0]=='') {arr.push(str2[i])}
+//     }
+//     return arr
+// }
 
-        if (arrtest[0]=='') {arr.push(clone[i])}
-        
-        // return arr
+// console.log(findstr_in_str("bu",["button", "breakfast", "border"]))
+// console.log(findstr_in_str("tri", ["triplet", "tries", "trip", "piano", "tree"]))
+
+// var str = "baacaaaaaaaaaaaaccd"
+// console.log(str.lastIndexOf("c"))
+
+// function sumOfCubes (arrofnumb) {
+//     let res = 0;
+//     for (let i = 0; i < arrofnumb.length; i++) {
+//         res += Math.pow(arrofnumb[i],3)
+//     }
+//     return res;
+// }
+// console.log(sumOfCubes([3, 4, 5]))
+// console.log(sumOfCubes([2]))
+// console.log(sumOfCubes([]))
+
+function ifvowel (str) {
+    let vowstr = ["a","e","i","o","u","A","E","I","O","U"]
+    for (let i = 0; i < vowstr.length; i++) {
+        if (str[0] === vowstr[i]) return true        
     }
-    return arr
-
+    return false
 }
-
-console.log(findstr_in_str("bu",["button", "breakfast", "border"]))
-console.log(findstr_in_str("tri", ["triplet", "tries", "trip", "piano", "tree"]))
-
-
-
+function latinTranslation (str) {
+    let arrstr = str.split(' ')
+    for (let i = 0; i < arrstr.length; i++) {
+        if (ifvowel(arrstr[i])) {
+            arrstr[i] += "way"
+        }
+        else {
+            arrstr[i] = arrstr[i].slice(1) + arrstr[i][0] + "ay"
+        } 
+    }
+    let res = arrstr.join(' ')
+    res = res[0].toUpperCase() + res.slice(1)
+    return res    
+}
+console.log("Gaaaa iJpppb F9zzz teeee oKKK mmm")
+console.log(latinTranslation("Gaaaa iJpppb F9zzz teeee oKKK mmm"))
+console.log("---------------------------------")
+console.log(latinTranslation("Cats are great pets."))
+console.log(latinTranslation("Tom got a small piece of pie."))
+console.log(latinTranslation("He told us a very exciting tale."))
